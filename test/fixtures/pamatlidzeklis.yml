@@ -1,0 +1,25 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nosaukums: MyString
+  razotajs: MyString
+  modelis: MyString
+  serijas_nummurs: MyString
+  kategorija: one
+  apraksts: MyText
+  qr_kods: MyString
+  iegades_datums: 2024-04-05
+  garantija: 2024-04-05
+  izmaksas: 9.99
+
+two:
+  nosaukums: MyString
+  razotajs: MyString
+  modelis: MyString
+  serijas_nummurs: MyString
+  kategorija: two
+  apraksts: MyText
+  qr_kods: MyString
+  iegades_datums: 2024-04-05
+  garantija: 2024-04-05
+  izmaksas: 9.99

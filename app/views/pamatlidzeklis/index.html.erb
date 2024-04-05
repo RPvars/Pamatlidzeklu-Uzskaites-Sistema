@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Pamatlidzeklis</h1>
+
+<div id="pamatlidzeklis">
+  <% @pamatlidzeklis.each do |pamatlidzekli| %>
+    <%= render pamatlidzekli %>
+    <p>
+      <%= link_to "Show this pamatlidzekli", pamatlidzekli %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New pamatlidzekli", new_pamatlidzekli_path %>

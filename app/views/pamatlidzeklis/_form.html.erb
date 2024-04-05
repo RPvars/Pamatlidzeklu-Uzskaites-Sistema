@@ -1,0 +1,67 @@
+<%= form_with(model: pamatlidzekli) do |form| %>
+  <% if pamatlidzekli.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pamatlidzekli.errors.count, "error") %> prohibited this pamatlidzekli from being saved:</h2>
+
+      <ul>
+        <% pamatlidzekli.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nosaukums, style: "display: block" %>
+    <%= form.text_field :nosaukums %>
+  </div>
+
+  <div>
+    <%= form.label :razotajs, style: "display: block" %>
+    <%= form.text_field :razotajs %>
+  </div>
+
+  <div>
+    <%= form.label :modelis, style: "display: block" %>
+    <%= form.text_field :modelis %>
+  </div>
+
+  <div>
+    <%= form.label :serijas_nummurs, style: "display: block" %>
+    <%= form.text_field :serijas_nummurs %>
+  </div>
+
+  <div>
+    <%= form.label :kategorija_id, style: "display: block" %>
+    <%= form.text_field :kategorija_id %>
+  </div>
+
+  <div>
+    <%= form.label :apraksts, style: "display: block" %>
+    <%= form.text_area :apraksts %>
+  </div>
+
+  <div>
+    <%= form.label :qr_kods, style: "display: block" %>
+    <%= form.text_field :qr_kods %>
+  </div>
+
+  <div>
+    <%= form.label :iegades_datums, style: "display: block" %>
+    <%= form.date_field :iegades_datums %>
+  </div>
+
+  <div>
+    <%= form.label :garantija, style: "display: block" %>
+    <%= form.date_field :garantija %>
+  </div>
+
+  <div>
+    <%= form.label :izmaksas, style: "display: block" %>
+    <%= form.text_field :izmaksas %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

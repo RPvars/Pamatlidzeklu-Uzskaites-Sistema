@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @pamatlidzekli %>
+
+<div>
+  <%= link_to "Edit this pamatlidzekli", edit_pamatlidzekli_path(@pamatlidzekli) %> |
+  <%= link_to "Back to pamatlidzeklis", pamatlidzeklis_path %>
+
+  <%= button_to "Destroy this pamatlidzekli", @pamatlidzekli, method: :delete %>
+</div>

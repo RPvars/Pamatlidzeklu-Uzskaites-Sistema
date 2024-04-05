@@ -10,7 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_05_112146) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_05_200154) do
+  create_table "kategorijas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name"
+    t.text "apraksts"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pamatlidzeklis", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "nosaukums"
+    t.string "razotajs"
+    t.string "modelis"
+    t.string "serijas_nummurs"
+    t.bigint "kategorija_id", null: false
+    t.text "apraksts"
+    t.string "qr_kods"
+    t.date "iegades_datums"
+    t.date "garantija"
+    t.decimal "izmaksas", precision: 8, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["kategorija_id"], name: "index_pamatlidzeklis_on_kategorija_id"
+  end
+
   create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.text "title"
     t.datetime "created_at", null: false
@@ -30,4 +53,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_05_112146) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pamatlidzeklis", "kategorijas"
 end
