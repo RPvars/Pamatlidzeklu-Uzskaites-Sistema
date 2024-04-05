@@ -1,5 +1,3 @@
 class Kategorija < ApplicationRecord
-    validates :name, presence: true, uniqueness: true
-    # has_many :pamatlidzekli
-  end
-  
+  validates :nosaukums, presence: true, uniqueness: true
+end

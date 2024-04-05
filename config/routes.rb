@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :kategorijas
   resources :pamatlidzeklis
   resources :posts
   devise_for :users

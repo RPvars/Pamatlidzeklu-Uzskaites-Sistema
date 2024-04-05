@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Kategorijas</h1>
+
+<div id="kategorijas">
+  <% @kategorijas.each do |kategorija| %>
+    <%= render kategorija %>
+    <p>
+      <%= link_to "Show this kategorija", kategorija %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New kategorija", new_kategorija_path %>

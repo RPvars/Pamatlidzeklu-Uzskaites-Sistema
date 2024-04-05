@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @kategorija %>
+
+<div>
+  <%= link_to "Edit this kategorija", edit_kategorija_path(@kategorija) %> |
+  <%= link_to "Back to kategorijas", kategorijas_path %>
+
+  <%= button_to "Destroy this kategorija", @kategorija, method: :delete %>
+</div>
