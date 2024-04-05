@@ -27,7 +27,7 @@
   </div>
   <div>
     <%= form.label :kategorija_id %>
-    <%= form.collection_select :kategorija_id, Kategorija.all, :id, :name, prompt: 'Select a Category' %>
+    <%= form.collection_select :kategorija_id, Kategorija.all, :id, :nosaukums, prompt: 'Select a Category' %>
   </div>
   <div>
     <%= form.label :apraksts, style: "display: block" %>
