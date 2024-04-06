@@ -12,6 +12,11 @@
         <li class="nav-item">
           <%= link_to "Pamatlīdzekļi", pamatlidzeklis_path, class:"nav-link" %>
         </li>
+        <% if user_signed_in? && current_user.admin? %>
+          <li class="nav-item">
+            <%= link_to "Kategorijas", kategorijas_path, class:"nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item">
           <%= link_to "Posts", posts_path, class:"nav-link" %>
         </li>
