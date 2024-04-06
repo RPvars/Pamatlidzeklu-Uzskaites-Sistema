@@ -1,12 +1,12 @@
 <h1>Home#index</h1>
 <% if user_signed_in? %>
   <p>Hello <%= current_user.email %></p>
-  <p>You are a <%= current_user.role %></p>
+  <p>Jūsu lietotāja loma ir:<%= current_user.role %></p>
   <% if current_user.admin? %>
-  <p>There are <%= User.count %> users in the system.</p>
+    <p>Sistēmā ir<%= User.count %> lietotāji piereģistrēti</p>
   <% end %>
 <% else %>
-  <p>You are not signed in!</p>
+  <p>Jūs neesat autorizējies</p>
   <%= link_to 'Sign Up!', new_user_registration_path %>
   <%= link_to 'Login!', new_user_session_path %>
 <% end %>
