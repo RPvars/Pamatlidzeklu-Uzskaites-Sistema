@@ -4,24 +4,29 @@ class KategorijasController < ApplicationController
   # GET /kategorijas or /kategorijas.json
   def index
     @kategorijas = Kategorija.all
+    authorize Kategorija
   end
 
   # GET /kategorijas/1 or /kategorijas/1.json
   def show
+    authorize Kategorija
   end
 
   # GET /kategorijas/new
   def new
     @kategorija = Kategorija.new
+    authorize Kategorija
   end
 
   # GET /kategorijas/1/edit
   def edit
+    authorize Kategorija
   end
 
   # POST /kategorijas or /kategorijas.json
   def create
     @kategorija = Kategorija.new(kategorija_params)
+    authorize @kategorija
 
     respond_to do |format|
       if @kategorija.save
@@ -36,6 +41,8 @@ class KategorijasController < ApplicationController
 
   # PATCH/PUT /kategorijas/1 or /kategorijas/1.json
   def update
+    authorize @kategorija
+
     respond_to do |format|
       if @kategorija.update(kategorija_params)
         format.html { redirect_to kategorija_url(@kategorija), notice: "Kategorija was successfully updated." }
@@ -49,6 +56,8 @@ class KategorijasController < ApplicationController
 
   # DELETE /kategorijas/1 or /kategorijas/1.json
   def destroy
+    authorize @kategorija
+    
     @kategorija.destroy!
 
     respond_to do |format|
