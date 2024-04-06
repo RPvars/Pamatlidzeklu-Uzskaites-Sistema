@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_05_211423) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_06_150334) do
   create_table "kategorijas", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nosaukums"
     t.text "apraksts"
@@ -32,12 +32,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_05_211423) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kategorija_id"], name: "index_pamatlidzeklis_on_kategorija_id"
-  end
-
-  create_table "posts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "title"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
