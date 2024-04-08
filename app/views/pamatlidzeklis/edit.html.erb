@@ -1,10 +1,7 @@
-<h1>Editing pamatlidzekli</h1>
-
+<h1>Rediģēt pamatlīdzekli</h1>
 <%= render "form", pamatlidzekli: @pamatlidzekli %>
-
 <br>
-
 <div>
-  <%= link_to "Show this pamatlidzekli", @pamatlidzekli %> |
-  <%= link_to "Back to pamatlidzeklis", pamatlidzeklis_path %>
-</div>
+  <%= link_to "Apskatīt pamatlīdzekli", @pamatlidzekli, class:"btn btn-primary"  %> 
+  <%= link_to "Visi pamatlīdzekļi", pamatlidzeklis_path, class:"btn btn-primary" %>
+  </div>

@@ -1,8 +1,7 @@
-<p style="color: green"><%= notice %></p>
 <div class="container mt-3">
   <h2>Pamatlīdzekļi</h2>
-  <table class="table table-striped">
-    <thead>
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="table-dark">
       <tr>
         <th>Nosaukums</th>
         <th>Razotajs</th>
@@ -14,6 +13,8 @@
         <th>Garantija</th>
         <th>Izmaksas</th>
         <th>Apskatīt</th>
+        <th>Rediģēt</th>
+        <th>Dzēst</th>
       </tr>
     </thead>
     <tbody>
@@ -22,5 +23,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-secondary" %>
 </div>
-<%= link_to "New pamatlidzekli", new_pamatlidzekli_path %>

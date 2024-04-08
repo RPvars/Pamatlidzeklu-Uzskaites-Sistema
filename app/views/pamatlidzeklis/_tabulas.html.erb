@@ -8,5 +8,7 @@
   <td><%= pamatlidzekli.iegades_datums %></td>
   <td><%= pamatlidzekli.garantija %></td>
   <td><%= pamatlidzekli.izmaksas %></td>
-  <td><%= link_to "Apskatīt", pamatlidzekli %></td>
+  <td><%= link_to "Apskatīt", pamatlidzekli, class:"btn btn-primary" %></td>
+  <td><%= link_to "Rediģēt",  edit_pamatlidzekli_path(pamatlidzekli), class:"btn btn-success" %></td>
+  <td><%= button_to "Dzēst", pamatlidzekli, method: :delete, class:"btn btn-danger" %></td>
 </tr>

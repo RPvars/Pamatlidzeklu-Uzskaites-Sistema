@@ -1,41 +1,21 @@
-<div id="<%= dom_id pamatlidzekli %>">
-  <p>
-    <strong>Nosaukums:</strong>
-    <%= pamatlidzekli.nosaukums %>
-  </p>
-  <p>
-    <strong>Razotajs:</strong>
-    <%= pamatlidzekli.razotajs %>
-  </p>
-  <p>
-    <strong>Modelis:</strong>
-    <%= pamatlidzekli.modelis %>
-  </p>
-  <p>
-    <strong>Serijas nummurs:</strong>
-    <%= pamatlidzekli.serijas_nummurs %>
-  </p>
-  <p>
-    <strong>Kategorija:</strong>
-    <%= pamatlidzekli.kategorija.nosaukums %>
-  </p>
-  <p>
-    <strong>Apraksts:</strong>
-    <%= pamatlidzekli.apraksts %>
-  </p>
-  <p>
-    <strong>Iegades datums:</strong>
-    <%= pamatlidzekli.iegades_datums %>
-  </p>
-  <p>
-    <strong>Garantija:</strong>
-    <%= pamatlidzekli.garantija %>
-  </p>
-  <p>
-    <strong>Izmaksas:</strong>
-    <%= pamatlidzekli.izmaksas %>
-  </p>
-  <%= image_tag(url_for(pamatlidzekli.qrcode)) %>
-  <%= link_to 'Lejuplādēt QR Kodu', download_qr_pamatlidzekli_path(pamatlidzekli), class: 'btn btn-primary' %>
-  
+<div id="<%= dom_id pamatlidzekli %>" class="container my-4">
+  <div class="card">
+    <div class="card-header">
+      Pamatlīdzekļa Detaļas
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= pamatlidzekli.nosaukums %></h5>
+      <h6 class="card-subtitle mb-4 text-muted"><%= pamatlidzekli.razotajs %>, <%= pamatlidzekli.modelis %></h6>
+      <p class="card-text">
+        <strong>Serijas nummurs:</strong> <%= pamatlidzekli.serijas_nummurs %><br>
+        <strong>Kategorija:</strong> <%= pamatlidzekli.kategorija.nosaukums %><br>
+        <strong>Apraksts:</strong> <%= pamatlidzekli.apraksts %><br>
+        <strong>Iegades datums:</strong> <%= pamatlidzekli.iegades_datums %><br>
+        <strong>Garantija:</strong> <%= pamatlidzekli.garantija %><br>
+        <strong>Izmaksas:</strong> <%= pamatlidzekli.izmaksas %>
+      </p>
+      <%= image_tag(url_for(pamatlidzekli.qrcode), class: 'img-fluid', alt: 'QR Code') if pamatlidzekli.qrcode.attached? %>
+      <%= link_to 'Lejuplādēt QR Kodu', download_qr_pamatlidzekli_path(pamatlidzekli), class: 'btn btn-primary mt-2' %>
+    </div>
+  </div>
 </div>

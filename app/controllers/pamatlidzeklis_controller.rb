@@ -52,7 +52,7 @@ class PamatlidzeklisController < ApplicationController
     @pamatlidzekli.destroy!
 
     respond_to do |format|
-      format.html { redirect_to pamatlidzeklis_url, notice: "Pamatlidzekli was successfully destroyed." }
+      format.html { redirect_to pamatlidzeklis_path, notice: "Pamatlidzekli was successfully destroyed." }
       format.json { head :no_content }
     end
   end
