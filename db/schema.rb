@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_07_225803) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_090550) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -53,7 +53,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_07_225803) do
     t.string "serijas_nummurs"
     t.bigint "kategorija_id", null: false
     t.text "apraksts"
-    t.string "qr_kods"
     t.date "iegades_datums"
     t.date "garantija"
     t.decimal "izmaksas", precision: 8, scale: 2

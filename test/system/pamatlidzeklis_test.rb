@@ -21,7 +21,6 @@ class PamatlidzeklisTest < ApplicationSystemTestCase
     fill_in "Kategorija", with: @pamatlidzekli.kategorija_id
     fill_in "Modelis", with: @pamatlidzekli.modelis
     fill_in "Nosaukums", with: @pamatlidzekli.nosaukums
-    fill_in "Qr kods", with: @pamatlidzekli.qr_kods
     fill_in "Razotajs", with: @pamatlidzekli.razotajs
     fill_in "Serijas nummurs", with: @pamatlidzekli.serijas_nummurs
     click_on "Create Pamatlidzekli"
@@ -41,7 +40,6 @@ class PamatlidzeklisTest < ApplicationSystemTestCase
     fill_in "Kategorija", with: @pamatlidzekli.kategorija_id
     fill_in "Modelis", with: @pamatlidzekli.modelis
     fill_in "Nosaukums", with: @pamatlidzekli.nosaukums
-    fill_in "Qr kods", with: @pamatlidzekli.qr_kods
     fill_in "Razotajs", with: @pamatlidzekli.razotajs
     fill_in "Serijas nummurs", with: @pamatlidzekli.serijas_nummurs
     click_on "Update Pamatlidzekli"

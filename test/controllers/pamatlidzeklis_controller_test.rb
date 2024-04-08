@@ -17,7 +17,7 @@ class PamatlidzeklisControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pamatlidzekli" do
     assert_difference("Pamatlidzekli.count") do
-      post pamatlidzeklis_url, params: { pamatlidzekli: { apraksts: @pamatlidzekli.apraksts, garantija: @pamatlidzekli.garantija, iegades_datums: @pamatlidzekli.iegades_datums, izmaksas: @pamatlidzekli.izmaksas, kategorija_id: @pamatlidzekli.kategorija_id, modelis: @pamatlidzekli.modelis, nosaukums: @pamatlidzekli.nosaukums, qr_kods: @pamatlidzekli.qr_kods, razotajs: @pamatlidzekli.razotajs, serijas_nummurs: @pamatlidzekli.serijas_nummurs } }
+      post pamatlidzeklis_url, params: { pamatlidzekli: { apraksts: @pamatlidzekli.apraksts, garantija: @pamatlidzekli.garantija, iegades_datums: @pamatlidzekli.iegades_datums, izmaksas: @pamatlidzekli.izmaksas, kategorija_id: @pamatlidzekli.kategorija_id, modelis: @pamatlidzekli.modelis, nosaukums: @pamatlidzekli.nosaukums,razotajs: @pamatlidzekli.razotajs, serijas_nummurs: @pamatlidzekli.serijas_nummurs } }
     end
 
     assert_redirected_to pamatlidzekli_url(Pamatlidzekli.last)
@@ -34,7 +34,7 @@ class PamatlidzeklisControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pamatlidzekli" do
-    patch pamatlidzekli_url(@pamatlidzekli), params: { pamatlidzekli: { apraksts: @pamatlidzekli.apraksts, garantija: @pamatlidzekli.garantija, iegades_datums: @pamatlidzekli.iegades_datums, izmaksas: @pamatlidzekli.izmaksas, kategorija_id: @pamatlidzekli.kategorija_id, modelis: @pamatlidzekli.modelis, nosaukums: @pamatlidzekli.nosaukums, qr_kods: @pamatlidzekli.qr_kods, razotajs: @pamatlidzekli.razotajs, serijas_nummurs: @pamatlidzekli.serijas_nummurs } }
+    patch pamatlidzekli_url(@pamatlidzekli), params: { pamatlidzekli: { apraksts: @pamatlidzekli.apraksts, garantija: @pamatlidzekli.garantija, iegades_datums: @pamatlidzekli.iegades_datums, izmaksas: @pamatlidzekli.izmaksas, kategorija_id: @pamatlidzekli.kategorija_id, modelis: @pamatlidzekli.modelis, nosaukums: @pamatlidzekli.nosaukums, razotajs: @pamatlidzekli.razotajs, serijas_nummurs: @pamatlidzekli.serijas_nummurs } }
     assert_redirected_to pamatlidzekli_url(@pamatlidzekli)
   end
 

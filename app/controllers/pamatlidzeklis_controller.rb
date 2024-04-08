@@ -25,7 +25,7 @@ class PamatlidzeklisController < ApplicationController
 
     respond_to do |format|
       if @pamatlidzekli.save
-        format.html { redirect_to pamatlidzekli_url(@pamatlidzekli), notice: "Pamatlidzekli was successfully created." }
+        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli was successfully created." }
         format.json { render :show, status: :created, location: @pamatlidzekli }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class PamatlidzeklisController < ApplicationController
   def update
     respond_to do |format|
       if @pamatlidzekli.update(pamatlidzekli_params)
-        format.html { redirect_to pamatlidzekli_url(@pamatlidzekli), notice: "Pamatlidzekli was successfully updated." }
+        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli was successfully updated." }
         format.json { render :show, status: :ok, location: @pamatlidzekli }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -65,6 +65,6 @@ class PamatlidzeklisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def pamatlidzekli_params
-      params.require(:pamatlidzekli).permit(:nosaukums, :razotajs, :modelis, :serijas_nummurs, :kategorija_id, :apraksts, :qr_kods, :iegades_datums, :garantija, :izmaksas)
+      params.require(:pamatlidzekli).permit(:nosaukums, :razotajs, :modelis, :serijas_nummurs, :kategorija_id, :apraksts, :iegades_datums, :garantija, :izmaksas, :qrcode)
     end
 end
