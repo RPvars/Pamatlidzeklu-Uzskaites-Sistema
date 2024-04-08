@@ -1,14 +1,26 @@
 <p style="color: green"><%= notice %></p>
-
-<h1>Pamatlidzeklis</h1>
-
-<div id="pamatlidzeklis">
-  <% @pamatlidzeklis.each do |pamatlidzekli| %>
-    <%= render pamatlidzekli %>
-    <p>
-      <%= link_to "Show this pamatlidzekli", pamatlidzekli %>
-    </p>
-  <% end %>
+<div class="container mt-3">
+  <h2>Pamatlīdzekļi</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nosaukums</th>
+        <th>Razotajs</th>
+        <th>Modelis</th>
+        <th>Serijas Nummurs</th>
+        <th>Kategorija</th>
+        <th>Apraksts</th>
+        <th>Iegades Datums</th>
+        <th>Garantija</th>
+        <th>Izmaksas</th>
+        <th>Apskatīt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pamatlidzeklis.each do |pamatlidzekli| %>
+        <%= render 'tabulas', pamatlidzekli: pamatlidzekli %>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
 <%= link_to "New pamatlidzekli", new_pamatlidzekli_path %>
