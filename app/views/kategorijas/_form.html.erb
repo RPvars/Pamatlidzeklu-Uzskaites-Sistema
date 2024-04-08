@@ -1,8 +1,7 @@
-<%= form_with(model: kategorija) do |form| %>
+<%= form_with(model: kategorija, class: 'needs-validation', local: true, novalidate: true) do |form| %>
   <% if kategorija.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(kategorija.errors.count, "error") %> prohibited this kategorija from being saved:</h2>
-
+    <div class="alert alert-danger" role="alert">
+      <h4><%= pluralize(kategorija.errors.count, "error") %> prohibited this kategorija from being saved:</h4>
       <ul>
         <% kategorija.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,18 +9,15 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :nosaukums, style: "display: block" %>
-    <%= form.text_field :nosaukums %>
+  <div class="form-group">
+    <%= form.label :nosaukums, class: 'form-label' %>
+    <%= form.text_field :nosaukums, class: 'form-control' %>
   </div>
-
-  <div>
-    <%= form.label :apraksts, style: "display: block" %>
-    <%= form.text_field :apraksts %>
+  <div class="form-group">
+    <%= form.label :apraksts, class: 'form-label' %>
+    <%= form.text_field :apraksts, class: 'form-control' %>
   </div>
-
   <div>
-    <%= form.submit %>
+    <%= form.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
