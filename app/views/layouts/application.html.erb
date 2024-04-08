@@ -15,7 +15,9 @@
     </nav>
     <div class="container">
       <main>
-        <%= render 'layouts/flash_messages' %>
+        <% if notice%>
+          <%= render 'layouts/alerts' %>
+        <% end %>
         <%= yield %>
       </main>
     </div>
