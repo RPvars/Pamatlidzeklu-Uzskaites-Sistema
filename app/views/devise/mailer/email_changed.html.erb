@@ -1,7 +1,8 @@
-<p>Hello <%= @email %>!</p>
-
-<% if @resource.try(:unconfirmed_email?) %>
-  <p>We're contacting you to notify you that your email is being changed to <%= @resource.unconfirmed_email %>.</p>
-<% else %>
-  <p>We're contacting you to notify you that your email has been changed to <%= @resource.email %>.</p>
-<% end %>
+<div class="container" style="max-width: 600px; margin: 20px auto; padding: 20px; border: 1px solid #ccc; border-radius: 5px;">
+  <p>Sveiki, <%= @email %>!</p>
+  <% if @resource.try(:unconfirmed_email?) %>
+    <p>Mēs sazināmies ar jums, lai paziņotu, ka jūsu e-pasts tiek mainīts uz <%= @resource.unconfirmed_email %>.</p>
+  <% else %>
+    <p>Mēs sazināmies ar jums, lai paziņotu, ka jūsu e-pasts ir mainīts uz <%= @resource.email %>.</p>
+  <% end %>
+</div>
