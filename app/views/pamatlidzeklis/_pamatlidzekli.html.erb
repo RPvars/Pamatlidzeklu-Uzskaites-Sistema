@@ -36,4 +36,5 @@
     <%= pamatlidzekli.izmaksas %>
   </p>
   <%= image_tag(url_for(pamatlidzekli.qrcode)) %>
+  <%= link_to 'Lejuplādēt QR Kodu', download_qr_pamatlidzekli_path(pamatlidzekli), class: 'btn btn-primary' %>
 </div>

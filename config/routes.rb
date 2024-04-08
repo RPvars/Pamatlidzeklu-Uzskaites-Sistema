@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :kategorijas
-  resources :pamatlidzeklis
+  resources :pamatlidzeklis do
+    member do
+      get 'download_qr'
+    end
+  end
   devise_for :users
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

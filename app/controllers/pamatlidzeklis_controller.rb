@@ -57,6 +57,18 @@ class PamatlidzeklisController < ApplicationController
     end
   end
 
+    # New method for downloading QR codes
+    def download_qr
+      @pamatlidzekli = Pamatlidzekli.find(params[:id])
+      if @pamatlidzekli.qrcode.attached?
+        send_data @pamatlidzekli.qrcode.download,
+                  filename: @pamatlidzekli.qrcode.filename.to_s,
+                  type: @pamatlidzekli.qrcode.content_type
+      else
+        redirect_to @pamatlidzekli, alert: 'QR code is not available.'
+      end
+    end
+    
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pamatlidzekli
