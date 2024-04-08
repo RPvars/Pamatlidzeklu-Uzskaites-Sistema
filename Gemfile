@@ -68,3 +68,5 @@ end
 
 gem 'devise'
 gem "pundit", "~> 2.3"
+
+gem "rqrcode", "~> 2.2"
