@@ -3,8 +3,11 @@ class PamatlidzeklisController < ApplicationController
 
   # GET /pamatlidzeklis or /pamatlidzeklis.json
   def index
-    @pamatlidzeklis = Pamatlidzekli.all
-  end
+    if params[:filter].present?
+      @pamatlidzeklis = Pamatlidzekli.where("nosaukums LIKE ?", "%#{params[:filter]}%").all
+    else
+      @pamatlidzeklis = Pamatlidzekli.all
+    end  end
 
   # GET /pamatlidzeklis/1 or /pamatlidzeklis/1.json
   def show
