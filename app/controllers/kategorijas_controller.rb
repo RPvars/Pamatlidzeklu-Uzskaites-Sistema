@@ -30,7 +30,7 @@ class KategorijasController < ApplicationController
 
     respond_to do |format|
       if @kategorija.save
-        format.html { redirect_to kategorija_url(@kategorija), notice: "Kategorija was successfully created." }
+        format.html { redirect_to kategorija_path(@kategorija), notice: "Kategorija was successfully created." }
         format.json { render :show, status: :created, location: @kategorija }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -45,7 +45,7 @@ class KategorijasController < ApplicationController
 
     respond_to do |format|
       if @kategorija.update(kategorija_params)
-        format.html { redirect_to kategorija_url(@kategorija), notice: "Kategorija was successfully updated." }
+        format.html { redirect_to kategorija_path(@kategorija), notice: "Kategorija was successfully updated." }
         format.json { render :show, status: :ok, location: @kategorija }
       else
         format.html { render :edit, status: :unprocessable_entity }

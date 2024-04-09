@@ -1,12 +1,3 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
 
 Pamatlidzekli.destroy_all
 
@@ -34,3 +25,55 @@ izmaksas_base = 2000.00
     izmaksas: izmaksas_base
   )
 end
+
+
+nosaukums_phone_base = "iPhone 13"
+razotajs_phone_base = "Apple"
+modelis_phone_base = "13"
+serijas_nummurs_phone_base = "IP"
+kategorija_id_phone_base = 2 
+apraksts_phone_base = "Apple iPhone 13 Smartphone"
+iegades_datums_phone_base = Date.today
+garantija_phone_base = Date.today + 1.year
+izmaksas_phone_base = 1200.00
+
+
+10.times do |i|
+  Pamatlidzekli.create!(
+    nosaukums: "#{nosaukums_phone_base}",
+    razotajs: "#{razotajs_phone_base}",
+    modelis: "#{modelis_phone_base}",
+    serijas_nummurs: "#{serijas_nummurs_phone_base} #{i+1}",
+    kategorija_id: kategorija_id_phone_base,
+    apraksts: "#{apraksts_phone_base}",
+    iegades_datums: iegades_datums_phone_base + i.days,
+    garantija: garantija_phone_base + i.days,
+    izmaksas: izmaksas_phone_base
+  )
+end
+
+nosaukums_table_base = "Office Table"
+razotajs_table_base = "Furniture Co."
+modelis_table_base = "Standard"
+serijas_nummurs_table_base = "TA"
+kategorija_id_table_base = 4
+apraksts_table_base = "Standard Office Table"
+iegades_datums_table_base = Date.today
+garantija_table_base = Date.today + 3.years 
+izmaksas_table_base = 300.00
+
+# Loop to create 50 office table records
+10.times do |i|
+  Pamatlidzekli.create!(
+    nosaukums: "#{nosaukums_table_base}",
+    razotajs: "#{razotajs_table_base}",
+    modelis: "#{modelis_table_base}",
+    serijas_nummurs: "#{serijas_nummurs_table_base} #{i+1}",
+    kategorija_id: kategorija_id_table_base,
+    apraksts: "#{apraksts_table_base}",
+    iegades_datums: iegades_datums_table_base + i.days,
+    garantija: garantija_table_base + i.days,
+    izmaksas: izmaksas_table_base
+  )
+end
+

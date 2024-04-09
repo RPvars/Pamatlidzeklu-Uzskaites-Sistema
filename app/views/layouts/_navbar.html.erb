@@ -5,7 +5,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav me-auto"> <!-- Add class "me-auto" to push dropdown to the right -->
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <%= link_to "Home", root_path, class:"nav-link active" %>
         </li>
@@ -27,7 +27,7 @@
               Autorizācija
             <% end %>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end"> <!-- Add class "dropdown-menu-end" to align dropdown to the right -->
+          <ul class="dropdown-menu dropdown-menu-end"> 
             <% if user_signed_in? %>
               <li><%= button_to "Iziet", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
               <li><%= link_to "Rediģēt Profilu", edit_user_registration_path, class:"dropdown-item" %></li>
