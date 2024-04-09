@@ -1,16 +1,18 @@
 <div class="container mt-3">
   <h2>Pamatlīdzekļi</h2>
   <div>
-    <%= form_with url: pamatlidzeklis_path, method: :get, data: {turbo_frame: "tabulas", controller: "form", action: "input->form#submit" } do %>
-      <%= text_field_tag "filter", nil, placeholder: "Filter"%>
-    <% end  %>
+    <div class="d-flex justify-content-end">
+      <%= form_with url: pamatlidzeklis_path, method: :get, data: {turbo_frame: "tabulas", controller: "form", action: "input->form#submit" } do %>
+        <%= text_field_tag "filter", nil, placeholder: "Filtrēt", class: "form-control" %>
+      <% end  %>
+    </div>
   </div>
   <turbo-frame id="pamatlidzeklis_table">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover mt-3">
       <thead class="table-dark">
         <tr>
           <th>Nosaukums</th>
-          <th>Razotajs</th>
+          <th>Ražotājs</th>
           <th>Modelis</th>
           <th>Serijas Nummurs</th>
           <th>Kategorija</th>
@@ -29,7 +31,9 @@
         <% end %>
       </tbody>
     </table>
-    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    <div class="d-flex justify-content-end">
+      <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    </div>
   </turbo-frame>
   <%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-secondary" %>
 </div>
