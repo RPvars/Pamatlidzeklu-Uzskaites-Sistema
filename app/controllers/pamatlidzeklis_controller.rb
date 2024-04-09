@@ -2,12 +2,16 @@ class PamatlidzeklisController < ApplicationController
   before_action :set_pamatlidzekli, only: %i[ show edit update destroy ]
 
   # GET /pamatlidzeklis or /pamatlidzeklis.json
-  def index
-    if params[:filter].present?
-      @pamatlidzeklis = Pamatlidzekli.where("nosaukums LIKE ?", "%#{params[:filter]}%").all
-    else
-      @pamatlidzeklis = Pamatlidzekli.all
-    end  end
+def index
+  if params[:filter].present?
+    @pamatlidzeklis = Pamatlidzekli.where("nosaukums LIKE ?", "%#{params[:filter]}%")
+  else
+    @pamatlidzeklis = Pamatlidzekli.all
+  end
+
+  @pagy, @pamatlidzeklis = pagy(@pamatlidzeklis, items: 10)
+end
+
 
   # GET /pamatlidzeklis/1 or /pamatlidzeklis/1.json
   def show

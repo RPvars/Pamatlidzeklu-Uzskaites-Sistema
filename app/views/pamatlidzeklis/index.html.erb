@@ -29,6 +29,7 @@
         <% end %>
       </tbody>
     </table>
+    <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
   </turbo-frame>
   <%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-secondary" %>
 </div>
