@@ -1,6 +1,9 @@
-<h1>Pievienot pamatlidzekli</h1>
-<%= render "form", pamatlidzekli: @pamatlidzekli %>
-<br>
-<div>
-  <%= link_to "Visi pamatlīdzekļi", pamatlidzeklis_path, class:"btn btn-primary" %>
-</div>
+<div class="container" style="max-width: 900px;">
+  <div class="card my-4">
+    <div class="card-header">
+      <h2>Pievienot pamatlidzekli</h2>
+      <%= render "form", pamatlidzekli: @pamatlidzekli %>
+      <br>
+      <div>
+        <%= link_to "Visi pamatlīdzekļi", pamatlidzeklis_path, class:"btn btn-primary" %>
+      </div>

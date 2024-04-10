@@ -32,8 +32,8 @@
               <li><%= button_to "Iziet", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
               <li><%= link_to "Rediģēt Profilu", edit_user_registration_path, class:"dropdown-item" %></li>
             <% else %>
-              <li><%= link_to "Sign Up", new_user_registration_path, class:"dropdown-item" %></li>
-              <li><%= link_to "Sign In", new_user_session_path, class:"dropdown-item" %></li>
+              <li><%= link_to "Izveidot lietotāju", new_user_registration_path, class:"dropdown-item" %></li>
+              <li><%= link_to "Pieslēgties", new_user_session_path, class:"dropdown-item" %></li>
             <% end %>
           </ul>
         </li>

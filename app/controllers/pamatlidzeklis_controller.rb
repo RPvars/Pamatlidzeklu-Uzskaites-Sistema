@@ -28,7 +28,7 @@ class PamatlidzeklisController < ApplicationController
 
     respond_to do |format|
       if @pamatlidzekli.save
-        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli was successfully created." }
+        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli izveidoti veiksmīgi." }
         format.json { render :show, status: :created, location: @pamatlidzekli }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -41,7 +41,7 @@ class PamatlidzeklisController < ApplicationController
   def update
     respond_to do |format|
       if @pamatlidzekli.update(pamatlidzekli_params)
-        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli was successfully updated." }
+        format.html { redirect_to pamatlidzekli_path(@pamatlidzekli), notice: "Pamatlidzekli rediģēti veiksmīgi." }
         format.json { render :show, status: :ok, location: @pamatlidzekli }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,7 +55,7 @@ class PamatlidzeklisController < ApplicationController
     @pamatlidzekli.destroy!
 
     respond_to do |format|
-      format.html { redirect_to pamatlidzeklis_path, notice: "Pamatlidzekli was successfully destroyed." }
+      format.html { redirect_to pamatlidzeklis_path, notice: "Pamatlīdzeklis veiksmīgi izdzēsts." }
       format.json { head :no_content }
     end
   end
@@ -68,7 +68,7 @@ class PamatlidzeklisController < ApplicationController
                   filename: @pamatlidzekli.qrcode.filename.to_s,
                   type: @pamatlidzekli.qrcode.content_type
       else
-        redirect_to @pamatlidzekli, alert: 'QR code is not available.'
+        redirect_to @pamatlidzekli, alert: 'QR kods nav pieejams.'
       end
     end
     

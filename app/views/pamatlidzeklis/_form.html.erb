@@ -1,51 +1,57 @@
-<%= form_with(model: pamatlidzekli, html: { class: 'needs-validation', novalidate: '' }) do |form| %>
-  <% if pamatlidzekli.errors.any? %>
-    <div class="alert alert-danger" role="alert">
-      <h4 class="alert-heading"><%= pluralize(pamatlidzekli.errors.count, "error") %> prohibited this pamatlidzekli from being saved:</h4>
-      <ul>
-        <% pamatlidzekli.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+
     </div>
-  <% end %>
-  <div class="form-group">
-    <%= form.label :nosaukums %>
-    <%= form.text_field :nosaukums, class: 'form-control' %>
+    <div class="card-body">
+      <%= form_with(model: pamatlidzekli, html: { class: 'needs-validation', novalidate: '' }) do |form| %>
+        <% if pamatlidzekli.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading"><%= pluralize(pamatlidzekli.errors.count, "error") %> prohibited this pamatlidzekli from being saved:</h4>
+            <ul>
+              <% pamatlidzekli.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <div class="form-group">
+          <%= form.label :nosaukums %>
+          <%= form.text_field :nosaukums, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :razotajs %>
+          <%= form.text_field :razotajs, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :modelis %>
+          <%= form.text_field :modelis, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :serijas_nummurs %>
+          <%= form.text_field :serijas_nummurs, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :kategorija_id %>
+          <%= form.collection_select :kategorija_id, Kategorija.all, :id, :nosaukums, { prompt: 'Select a Category' }, { class: 'form-control' } %>
+        </div>
+        <div class="form-group">
+          <%= form.label :apraksts %>
+          <%= form.text_area :apraksts, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :iegades_datums %>
+          <%= form.date_field :iegades_datums, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :garantija %>
+          <%= form.date_field :garantija, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= form.label :izmaksas %>
+          <%= form.text_field :izmaksas, class: 'form-control' %>
+        </div>
+        <div class="form-group mt-3">
+          <%= form.submit class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="form-group">
-    <%= form.label :razotajs %>
-    <%= form.text_field :razotajs, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :modelis %>
-    <%= form.text_field :modelis, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :serijas_nummurs %>
-    <%= form.text_field :serijas_nummurs, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :kategorija_id %>
-    <%= form.collection_select :kategorija_id, Kategorija.all, :id, :nosaukums, { prompt: 'Select a Category' }, { class: 'form-control' } %>
-  </div>
-  <div class="form-group">
-    <%= form.label :apraksts %>
-    <%= form.text_area :apraksts, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :iegades_datums %>
-    <%= form.date_field :iegades_datums, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :garantija %>
-    <%= form.date_field :garantija, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= form.label :izmaksas %>
-    <%= form.text_field :izmaksas, class: 'form-control' %>
-  </div>
-  <div class="form-group mt-3">
-    <%= form.submit class: 'btn btn-primary' %>
-  </div>
-<% end %>
+</div>
