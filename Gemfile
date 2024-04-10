@@ -74,3 +74,4 @@ gem "pundit", "~> 2.3"
 gem "rqrcode", "~> 2.2" 
 gem 'elasticsearch', '~> 8.13'
 gem 'searchkick', '~> 5.3', '>= 5.3.1'
+gem "pagy", "~> 8.1"

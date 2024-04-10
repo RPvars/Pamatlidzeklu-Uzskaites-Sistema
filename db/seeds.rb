@@ -2,7 +2,7 @@
 Pamatlidzekli.destroy_all
 
 nosaukums_base = "Mac Book Air 13"
-razotajs_base = "Razotajs"
+razotajs_base = "Apple"
 modelis_base = "13"
 serijas_nummurs_base = "SN"
 kategorija_id_base = 3 
@@ -12,7 +12,7 @@ garantija_base = Date.today + 2.year
 izmaksas_base = 2000.00
 
 # Loop to create 50 records
-10.times do |i|
+20.times do |i|
   Pamatlidzekli.create!(
     nosaukums: "#{nosaukums_base}",
     razotajs: "#{razotajs_base}",
@@ -38,7 +38,7 @@ garantija_phone_base = Date.today + 1.year
 izmaksas_phone_base = 1200.00
 
 
-10.times do |i|
+20.times do |i|
   Pamatlidzekli.create!(
     nosaukums: "#{nosaukums_phone_base}",
     razotajs: "#{razotajs_phone_base}",

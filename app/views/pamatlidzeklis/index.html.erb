@@ -39,5 +39,8 @@
     </tbody>
   </div>
 </table>
+<div class="d-flex justify-content-end">
+  <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+</div>
 <%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-secondary" %>
 </div>

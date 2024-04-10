@@ -3,7 +3,9 @@ class PamatlidzeklisController < ApplicationController
 
   # GET /pamatlidzeklis or /pamatlidzeklis.json
   def index
-    @pamatlidzeklis = Pamatlidzekli.all
+    #@pamatlidzeklis = Pamatlidzekli.all
+    pamatlidzekli_visi = Pamatlidzekli.all
+    @pagy, @pamatlidzeklis = pagy(pamatlidzekli_visi.all, items: 10)
   end
 
 
