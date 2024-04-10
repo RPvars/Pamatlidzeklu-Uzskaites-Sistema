@@ -1,5 +1,7 @@
 class Pamatlidzekli < ApplicationRecord
+  searchkick
   include Rails.application.routes.url_helpers
+  
   # Associations
   belongs_to :kategorija
   has_one_attached :qrcode, dependent: :destroy

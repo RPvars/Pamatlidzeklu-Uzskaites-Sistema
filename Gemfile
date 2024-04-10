@@ -66,6 +66,11 @@ group :test do
   gem "selenium-webdriver"
 end
 
+ # Authentication
 gem 'devise'
-gem "pundit", "~> 2.3"
-gem "rqrcode", "~> 2.2"
+# Authorization
+gem "pundit", "~> 2.3" 
+# Generating QR codes
+gem "rqrcode", "~> 2.2" 
+gem 'elasticsearch', '~> 8.13'
+gem 'searchkick', '~> 5.3', '>= 5.3.1'

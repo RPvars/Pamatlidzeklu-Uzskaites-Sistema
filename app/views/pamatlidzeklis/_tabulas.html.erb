@@ -1,25 +1,27 @@
-<tr>
-  <td><%= pamatlidzekli.nosaukums %></td>
-  <td><%= pamatlidzekli.razotajs %></td>
-  <td><%= pamatlidzekli.modelis %></td>
-  <td><%= pamatlidzekli.serijas_nummurs %></td>
-  <td><%= pamatlidzekli.kategorija.nosaukums if pamatlidzekli.kategorija %></td>
-  <td><%= pamatlidzekli.apraksts %></td>
-  <td><%= pamatlidzekli.iegades_datums %></td>
-  <td><%= pamatlidzekli.garantija %></td>
-  <td><%= pamatlidzekli.izmaksas %></td>
-  <td>
-    <%= link_to pamatlidzekli, class: "text-success border-0", title: "Apskatīt" do %>
-      <i class="fa-solid fa-eye"></i>    <% end %>
-  </td>
-  <td>
-    <%= link_to edit_pamatlidzekli_path(pamatlidzekli), class: "text-primary border-0", title: "Rediģēt" do %>
-      <i class="fa-solid fa-pencil"></i>
-    <% end %>
-  </td>
-  <td>
-    <%= button_to pamatlidzekli, method: :delete, class: "text-danger border-0 bg-transparent", title: "Dzēst" do %>
-      <i class="fas fa-trash"></i>
-    <% end %>
-  </td>
-</tr>
+<% @pamatlidzeklis.each do |pamatlidzekli| %>
+  <tr>
+    <td><%= pamatlidzekli.nosaukums %></td>
+    <td><%= pamatlidzekli.razotajs %></td>
+    <td><%= pamatlidzekli.modelis %></td>
+    <td><%= pamatlidzekli.serijas_nummurs %></td>
+    <td><%= pamatlidzekli.kategorija.nosaukums if pamatlidzekli.kategorija %></td>
+    <td><%= pamatlidzekli.apraksts %></td>
+    <td><%= pamatlidzekli.iegades_datums %></td>
+    <td><%= pamatlidzekli.garantija %></td>
+    <td><%= pamatlidzekli.izmaksas %></td>
+    <td>
+      <%= link_to pamatlidzekli, class: "text-success border-0", title: "Apskatīt" do %>
+        <i class="fa-solid fa-eye"></i>    <% end %>
+    </td>
+    <td>
+      <%= link_to edit_pamatlidzekli_path(pamatlidzekli), class: "text-primary border-0", title: "Rediģēt" do %>
+        <i class="fa-solid fa-pencil"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= button_to pamatlidzekli, method: :delete, class: "text-danger border-0 bg-transparent", title: "Dzēst" do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>
