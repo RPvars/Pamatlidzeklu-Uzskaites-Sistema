@@ -1,12 +1,13 @@
-<div id="<%= dom_id kategorija %>">
-  <p>
-    <strong>Nosaukums:</strong>
-    <%= kategorija.nosaukums %>
-  </p>
-
-  <p>
-    <strong>Apraksts:</strong>
-    <%= kategorija.apraksts %>
-  </p>
-
+<div id="<%= dom_id kategorija %>" class="container my-4">
+  <div class="card">
+    <div class="card-header">
+      Kategorijas Detaļas
+    </div>
+    <div class="card-body">
+      <h5 class="card-title"><%= kategorija.nosaukums %></h5>
+      <p class="card-text">
+        <strong>Apraksts:</strong><%= kategorija.apraksts %>
+      </p>
+    </div>
+  </div>
 </div>

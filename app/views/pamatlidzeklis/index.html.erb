@@ -12,7 +12,7 @@
       <%= form.select :category, options_for_select(Kategorija.all.map { |c| [c.nosaukums, c.id] }.prepend(['Izvelieties kategoriju', nil])), {}, class: "form-select" %>
     </div>
     <div>
-      <%= form.submit "Meklēt", class: "btn btn-primary" %>
+      <%= form.submit "Meklēt", class: "btn btn-secondary" %>
     </div>
   <% end %>
 </div>
@@ -42,5 +42,5 @@
 <div class="d-flex justify-content-end">
   <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
 </div>
-<%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-secondary" %>
+<%= link_to "Pievienot Pamatlīdzekli", new_pamatlidzekli_path, class:"btn btn-primary" %>
 </div>

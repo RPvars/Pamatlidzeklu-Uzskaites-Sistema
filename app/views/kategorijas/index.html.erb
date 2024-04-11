@@ -1,14 +1,21 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Kategorijas</h1>
-
-<div id="kategorijas">
-  <% @kategorijas.each do |kategorija| %>
-    <%= render kategorija %>
-    <p>
-      <%= link_to "Show this kategorija", kategorija %>
-    </p>
-  <% end %>
+<div class="container mt-3">
+  <h2>Kategorijas</h2>
 </div>
-
-<%= link_to "New kategorija", new_kategorija_path %>
+<table class="table table-striped table-hover mt-3">
+  <thead class="table-dark">
+    <tr>
+      <th>Nosaukums</th>
+      <th>Apraksts</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <div>
+    <tbody id="kategorijas">
+      <%= render 'tabulas', kategorija: @kategorijas %>
+    </tbody>
+  </div>
+</table>
+<%= link_to "Pievienot Kategoriju", new_kategorija_path, class:"btn btn-primary" %>
+</div>

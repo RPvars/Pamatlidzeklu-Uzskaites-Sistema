@@ -1,9 +1,9 @@
-<h1>New kategorija</h1>
-
-<%= render "form", kategorija: @kategorija %>
-
-<br>
-
-<div>
-  <%= link_to "Back to kategorijas", kategorijas_path %>
-</div>
+<div class="container" style="max-width: 900px;">
+  <div class="card my-4">
+    <div class="card-header">
+      <h2>Pievienot kategoriju</h2>
+      <%= render "form", kategorija: @kategorija %>
+      <br>
+      <div>
+        <%= link_to "Visas kategorijas", kategorijas_path, class: 'btn btn-secondary' %>
+      </div>

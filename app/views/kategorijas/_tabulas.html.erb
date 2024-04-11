@@ -1,0 +1,20 @@
+<% @kategorijas.each do |kategorija| %>
+  <tr>
+    <td><%= kategorija.nosaukums %></td>
+    <td><%= kategorija.apraksts %></td>
+    <td>
+      <%= link_to kategorija, class: "text-success border-0", title: "Apskatīt" do %>
+        <i class="fa-solid fa-eye"></i>    <% end %>
+    </td>
+    <td>
+      <%= link_to edit_kategorija_path(kategorija), class: "text-primary border-0", title: "Rediģēt" do %>
+        <i class="fa-solid fa-pencil"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= button_to kategorija, method: :delete, class: "text-danger border-0 bg-transparent", title: "Dzēst" do %>
+        <i class="fas fa-trash"></i>
+      <% end %>
+    </td>
+  </tr>
+<% end %>

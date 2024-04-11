@@ -2,5 +2,7 @@
 <div>
   <%= link_to "Rediģēt", edit_pamatlidzekli_path(@pamatlidzekli), class:"btn btn-secondary" %>
   <%= link_to "Visi pamatlīdzekļi", pamatlidzeklis_path, class:"btn btn-primary" %>
-  <%= button_to "Izdzēst šo pamatlīdzekli", @pamatlidzekli, method: :delete, class:"btn btn-danger mt-3" %>
+  <div class="d-flex justify-content-end">
+    <%= button_to "Dzēst", @pamatlidzekli, method: :delete, class:"btn btn-danger mt-3" %>
+  </div>
 </div>

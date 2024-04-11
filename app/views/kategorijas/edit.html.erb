@@ -1,10 +1,10 @@
-<h1>Editing kategorija</h1>
-
-<%= render "form", kategorija: @kategorija %>
-
-<br>
-
-<div>
-  <%= link_to "Show this kategorija", @kategorija %> |
-  <%= link_to "Back to kategorijas", kategorijas_path %>
-</div>
+<div class="container" style="max-width: 900px;">
+  <div class="card my-4">
+    <div class="card-header">
+      <h2>Rediģēt kategoriju</h1>
+      <%= render "form", kategorija: @kategorija %>
+      <br>
+      <div>
+        <%= link_to "Apskatīt kategoriju", @kategorija, class: 'btn btn-secondary' %>
+        <%= link_to "Visas kategorijas", kategorijas_path, class: 'btn btn-secondary' %>
+      </div>
