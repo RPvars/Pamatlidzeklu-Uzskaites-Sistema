@@ -1,5 +1,6 @@
 class KategorijasController < ApplicationController
   before_action :set_kategorija, only: %i[ show edit update destroy ]
+  
 
   # GET /kategorijas or /kategorijas.json
   def index

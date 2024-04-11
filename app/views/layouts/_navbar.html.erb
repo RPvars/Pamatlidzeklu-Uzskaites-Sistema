@@ -6,16 +6,18 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <%= link_to "Home", root_path, class:"nav-link active" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Pamatlīdzekļi", pamatlidzeklis_path, class:"nav-link" %>
-        </li>
-        <% if user_signed_in? && current_user.admin? %>
+        <% if user_signed_in?%>
           <li class="nav-item">
-            <%= link_to "Kategorijas", kategorijas_path, class:"nav-link" %>
+            <%= link_to "Home", root_path, class:"nav-link active" %>
           </li>
+          <li class="nav-item">
+            <%= link_to "Pamatlīdzekļi", pamatlidzeklis_path, class:"nav-link" %>
+          </li>
+          <% if current_user.admin? %>
+            <li class="nav-item">
+              <%= link_to "Kategorijas", kategorijas_path, class:"nav-link" %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
       <ul class="navbar-nav">
@@ -27,7 +29,7 @@
               Autorizācija
             <% end %>
           </a>
-          <ul class="dropdown-menu dropdown-menu-end"> 
+          <ul class="dropdown-menu dropdown-menu-end">
             <% if user_signed_in? %>
               <li><%= button_to "Iziet", destroy_user_session_path, method: :delete, class:"dropdown-item" %></li>
               <li><%= link_to "Rediģēt Profilu", edit_user_registration_path, class:"dropdown-item" %></li>

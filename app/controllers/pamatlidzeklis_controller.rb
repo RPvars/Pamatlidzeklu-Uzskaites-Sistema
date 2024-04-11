@@ -52,6 +52,7 @@ class PamatlidzeklisController < ApplicationController
 
   # DELETE /pamatlidzeklis/1 or /pamatlidzeklis/1.json
   def destroy
+    authorize @pamatlidzekli
     @pamatlidzekli.destroy!
 
     respond_to do |format|

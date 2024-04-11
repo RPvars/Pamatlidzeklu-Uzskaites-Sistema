@@ -30,7 +30,9 @@
       <th>Izmaksas</th>
       <th></th>
       <th></th>
-      <th></th>
+      <% if user_signed_in? && current_user.admin?%>
+        <th></th>
+      <% end %>
     </tr>
   </thead>
   <div>

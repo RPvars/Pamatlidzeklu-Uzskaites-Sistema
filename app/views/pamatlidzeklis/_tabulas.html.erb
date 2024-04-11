@@ -18,10 +18,12 @@
         <i class="fa-solid fa-pencil"></i>
       <% end %>
     </td>
+    <% if user_signed_in? && current_user.admin?%>
     <td>
       <%= button_to pamatlidzekli, method: :delete, class: "text-danger border-0 bg-transparent", title: "Dzēst" do %>
         <i class="fas fa-trash"></i>
       <% end %>
     </td>
+    <% end %>
   </tr>
 <% end %>
