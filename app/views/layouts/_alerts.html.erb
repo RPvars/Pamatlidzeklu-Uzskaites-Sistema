@@ -1,4 +1,13 @@
-<div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
-  <%= notice%>
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+<% flash.each do |type, message| %>
+  <% bootstrap_class = case type.to_sym %>
+    <% when :notice then 'alert-info' %>
+    <% when :alert then 'alert-warning' %>
+    <% when :error then 'alert-danger' %>
+    <% when :success then 'alert-success' %>
+    <% else 'alert-primary' %>
+  <% end %>
+  <div class="alert <%= bootstrap_class %> alert-dismissible fade show mt-4" role="alert">
+    <%= message %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
